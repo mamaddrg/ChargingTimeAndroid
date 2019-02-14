@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.drg.chargingtime">
 
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
             android:allowBackup="true"
@@ -11,6 +11,17 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <service
+                android:name=".Services.ComputeChargingTimeService"
+                android:enabled="true"
+                android:exported="false">
+        </service>
+        <service
+                android:name=".Services.WaitingForPowerService"
+                android:enabled="true"
+                android:exported="false">
+        </service>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>

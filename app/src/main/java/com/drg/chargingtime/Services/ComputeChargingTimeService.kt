@@ -51,8 +51,8 @@ class ComputeChargingTimeService : Service() {
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(batteryChangedBC)
-        isServiceRunning = false
         primitiveChargePercent = -1
+        isServiceRunning = false
         timerTask.cancel()
     }
 
@@ -70,7 +70,6 @@ class ComputeChargingTimeService : Service() {
                 val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
                 notificationManager.notify(2, Utils.makeFullyChargedNotification(this@ComputeChargingTimeService))
                 saveChargeDataInDB()
-                isServiceRunning = false
                 stopSelf()
             }
             else if (batteryStatus == BatteryManager.BATTERY_STATUS_DISCHARGING ||

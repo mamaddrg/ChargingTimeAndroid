@@ -38,14 +38,17 @@ class WaitingForPowerService : Service() {
 
             if (intent?.getIntExtra(BatteryManager.EXTRA_STATUS , -1) == BatteryManager.BATTERY_STATUS_CHARGING) {
                 if (!ComputeChargingTimeService.isServiceRunning){
-                    if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
-                        startService(Intent(context, ComputeChargingTimeService::class.java))
-                    else
-                        startForegroundService(Intent(context, ComputeChargingTimeService::class.java))
+                    if (intent.getIntExtra(BatteryManager.EXTRA_LEVEL , 0) < 100) {
+                        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O)
+                            startService(Intent(context, ComputeChargingTimeService::class.java))
+                        else
+                            startForegroundService(Intent(context, ComputeChargingTimeService::class.java))
+                    }
                 }
             }
         }
     }
+
 
     override fun onDestroy() {
         super.onDestroy()

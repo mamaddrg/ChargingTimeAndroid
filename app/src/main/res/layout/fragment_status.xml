@@ -1,84 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<ScrollView
 	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	xmlns:app="http://schemas.android.com/apk/res-auto">
+	android:fillViewport="true">
 	
-	<me.zhanghai.android.materialprogressbar.MaterialProgressBar
-		android:id="@+id/pb_show_battery_level"
-		style="@style/Widget.MaterialProgressBar.ProgressBar"
-		android:layout_width="300dp"
-		android:layout_height="300dp"
-		android:layout_marginStart="8dp"
-		android:layout_marginTop="8dp"
-		android:layout_marginEnd="8dp"
-		android:layout_marginBottom="8dp"
-		android:indeterminateOnly="false"
-		android:max="100"
-		android:secondaryProgress="100"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent"
-		app:layout_constraintVertical_bias="0.19999999"
-		app:mpb_secondaryProgressTint="#C7A58F" />
-	
-	<TextView
-		android:id="@+id/tv_show_battery_level"
-		android:layout_width="wrap_content"
+	<LinearLayout
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:fontFamily="@font/dosis"
-		android:textColor="@android:color/black"
-		android:textSize="32sp"
-		android:textStyle="bold"
-		app:layout_constraintBottom_toBottomOf="@+id/pb_show_battery_level"
-		app:layout_constraintEnd_toEndOf="@+id/pb_show_battery_level"
-		app:layout_constraintStart_toStartOf="@+id/pb_show_battery_level"
-		app:layout_constraintTop_toTopOf="@+id/pb_show_battery_level"
-		tools:text="87%" />
+		android:orientation="vertical">
+		
+		<android.support.constraint.ConstraintLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
+			
+			<android.support.constraint.Guideline
+				android:id="@+id/guideline_status"
+				android:layout_width="1dp"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal"
+				app:layout_constraintGuide_percent="0.6" />
+			
+			<me.zhanghai.android.materialprogressbar.MaterialProgressBar
+				android:id="@+id/pb_show_battery_level"
+				style="@style/Widget.MaterialProgressBar.ProgressBar"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginEnd="8dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginBottom="8dp"
+				android:indeterminateOnly="false"
+				android:max="100"
+				android:maxWidth="300dp"
+				android:maxHeight="300dp"
+				android:minWidth="270dp"
+				android:minHeight="270dp"
+				android:secondaryProgress="100"
+				app:layout_constraintBottom_toTopOf="@+id/guideline_status"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="parent"
+				app:layout_constraintVertical_bias="0.75"
+				app:layout_optimizationLevel="none"
+				app:mpb_secondaryProgressTint="#C7A58F" />
+			
+			<TextView
+				android:id="@+id/tv_show_battery_level"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:fontFamily="@font/dosis"
+				android:textColor="@android:color/black"
+				android:textSize="32sp"
+				android:textStyle="bold"
+				app:layout_constraintBottom_toBottomOf="@+id/pb_show_battery_level"
+				app:layout_constraintEnd_toEndOf="@+id/pb_show_battery_level"
+				app:layout_constraintStart_toStartOf="@+id/pb_show_battery_level"
+				app:layout_constraintTop_toTopOf="@+id/pb_show_battery_level"
+				tools:text="87%" />
+			
+			<TextView
+				android:id="@+id/tv_extra_info"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginEnd="8dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginBottom="8dp"
+				android:fontFamily="@font/dosis"
+				android:gravity="center_horizontal"
+				android:textColor="@android:color/black"
+				android:textSize="18sp"
+				app:layout_constraintBottom_toTopOf="@+id/tv_show_charging_time"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toTopOf="@+id/guideline_status"
+				app:layout_constraintVertical_bias="0.39"
+				app:layout_constraintVertical_chainStyle="packed"
+				tools:text="this is just for test" />
+			
+			<TextView
+				android:id="@+id/tv_show_charging_time"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginStart="8dp"
+				android:layout_marginLeft="8dp"
+				android:layout_marginTop="8dp"
+				android:layout_marginEnd="8dp"
+				android:layout_marginRight="8dp"
+				android:layout_marginBottom="8dp"
+				android:fontFamily="@font/dosis"
+				android:gravity="center_horizontal"
+				android:textColor="@android:color/black"
+				android:textSize="19sp"
+				app:layout_constraintBottom_toBottomOf="parent"
+				app:layout_constraintEnd_toEndOf="parent"
+				app:layout_constraintHorizontal_bias="0.5"
+				app:layout_constraintStart_toStartOf="parent"
+				app:layout_constraintTop_toBottomOf="@+id/tv_extra_info"
+				tools:text="Total Charging Time" />
+		
+		</android.support.constraint.ConstraintLayout>
+		
+	</LinearLayout>
 	
-	<TextView
-		android:id="@+id/tv_extra_info"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="8dp"
-		android:layout_marginTop="8dp"
-		android:layout_marginEnd="8dp"
-		android:layout_marginBottom="8dp"
-		android:fontFamily="@font/dosis"
-		android:gravity="center_horizontal"
-		android:textColor="@android:color/black"
-		android:textSize="18sp"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintHorizontal_bias="0.5"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/pb_show_battery_level"
-		app:layout_constraintVertical_bias="0.18"
-		app:layout_constraintVertical_chainStyle="packed"
-		tools:text="this is just for test" />
-	
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:id="@+id/tv_show_charging_time"
-		android:layout_marginTop="8dp"
-		app:layout_constraintTop_toBottomOf="@+id/tv_extra_info"
-		app:layout_constraintStart_toStartOf="parent"
-		android:layout_marginStart="8dp"
-		app:layout_constraintEnd_toEndOf="parent"
-		android:layout_marginEnd="8dp"
-		android:textSize="19sp"
-		android:textColor="@android:color/black"
-		tools:text="Total Charging Time"
-		android:gravity="center_horizontal"
-		android:fontFamily="@font/dosis"
-		app:layout_constraintHorizontal_bias="0.495"
-		app:layout_constraintVertical_chainStyle="packed"
-		app:layout_constraintBottom_toBottomOf="parent"
-		app:layout_constraintVertical_bias="0.100000024"
-		android:layout_marginBottom="8dp"/>
-
-</android.support.constraint.ConstraintLayout>
+</ScrollView>

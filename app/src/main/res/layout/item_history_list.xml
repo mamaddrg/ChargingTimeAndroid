@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.card.MaterialCardView
+	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	app:cardBackgroundColor="@color/grayNavigation"
+	android:layout_marginTop="8dp"
+	android:layout_marginRight="8dp"
+	android:layout_marginLeft="8dp"
+	app:cardBackgroundColor="@color/grayCardView"
 	app:cardCornerRadius="4dp"
 	app:cardElevation="6dp"
-	app:cardPreventCornerOverlap="false"
-	app:cardUseCompatPadding="true">
+	app:cardPreventCornerOverlap="false">
 	
 	<android.support.constraint.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
-		
 		
 		<TextView
 			android:id="@+id/tv_item_history"

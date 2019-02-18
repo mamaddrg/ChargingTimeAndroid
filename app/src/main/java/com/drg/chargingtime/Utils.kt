@@ -42,8 +42,8 @@ class Utils {
 
             val notification = NotificationCompat.Builder(context, NOTIFICATION_CHANNEL_ID)
                 .setContentTitle("Charging Time")
-                .setContentText("Total time of your device charge is computing.")
-                .setSmallIcon(R.drawable.ic_status)
+                .setContentText("Device charge Time is computing.")
+                .setSmallIcon(R.drawable.ic_charging_notification)
                 .setContentIntent(pendingIntent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .build()

@@ -94,7 +94,8 @@ class ComputeChargingTimeService : Service() {
             Utils.getCurrentTimeHM(),
             (timeOnCharge / 60),
             primitiveChargePercent,
-            batteryLevel
+            batteryLevel,
+            ""
         )
         ChargingDB(this).insertChargeItem(charge)
     }

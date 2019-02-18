@@ -4,4 +4,5 @@
     <color name="colorPrimaryDark">#D14226</color>
     <color name="colorAccent">#F85334</color>
     <color name="grayNavigation">#ECF0F1</color>
+    <color name="grayCardView">#F2F1EF</color>
 </resources>

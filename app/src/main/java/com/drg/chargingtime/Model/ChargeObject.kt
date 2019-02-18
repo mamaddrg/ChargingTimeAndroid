@@ -5,4 +5,5 @@ class ChargeObject(var id : Int ,
                    var time: String ,
                    var onChargeTime : Int ,
                    var primitivePercentage : Int ,
-                   var finalPercentage : Int)
+                   var finalPercentage : Int ,
+                   var description : String)

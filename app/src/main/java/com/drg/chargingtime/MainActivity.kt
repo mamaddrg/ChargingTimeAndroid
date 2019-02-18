@@ -47,6 +47,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.menu_history -> {
                     manager.beginTransaction().hide(activeFragment).show(history).commit()
+                    history.updateList()
                     activeFragment = history
                 }
             }
